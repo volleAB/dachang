@@ -4,6 +4,7 @@ const router = require('koa-router')();
 const cors = require('koa2-cors');
 var http = require('http');
 var crawler = require('./crawler');
+var crawler = require('./crawler2');
 var fs = require('fs');
 var file = ['./message.json','./brief.json'];
 const app = new Koa();
