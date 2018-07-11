@@ -4,7 +4,7 @@
 // var time = obj.match(reg) ? obj.match(reg)[1] : date.getFullYear() + '-' + ((date.getMonth() + 1) > 9 ? (date.getMonth() + 1) : '0' + (date.getMonth() + 1)) + '-' + ((date.getDate()) > 9 ? (date.getDate()) : '0' + (date.getDate()));
 // console.log(time);
 
-var obj2 = "作者：阿诗丹顿\n 发布时间：213-13-1 访问次数：\n";
+var obj2 = "作者：阿诗丹顿 阿萨德\n 发布时间：213-13-1 访问次数：\n";
 var reg = /^作者：(.*)/;
 
 console.log(obj2.match(reg)[0]);

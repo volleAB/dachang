@@ -7,7 +7,7 @@ let pageListArr = [];
 let noticeListArr = [];
 
 crawler2 = () => {
-    /*getPageList = (url) => {              //对新闻网进行爬虫
+    getPageList = (url) => {              //对新闻网进行爬虫
         http.get(url, (res) => {
             let html = '';
             res.on('data', (data) => {
@@ -48,27 +48,26 @@ crawler2 = () => {
                             let $ = cheerio.load(html);
                             let title = $('.single-header').find('h2').text();
                             let obj = $('.article_author').text();
-                            let mes = $('.p_text_indent_2').text();
+                            let mes = $('.single-content').text();
 
                             let date = new Date();
                             let reg = /(\d{4}-\d{2}-\d{2})/m;
                             let time = obj.match(reg) ? obj.match(reg)[1] : date.getFullYear() + '-' + ((date.getMonth() + 1) > 9 ? (date.getMonth() + 1) : '0' + (date.getMonth() + 1)) + '-' + ((date.getDate()) > 9 ? (date.getDate()) : '0' + (date.getDate()));
                             
 
-                            let reg2 = /^作者：(.*)/m;
+                            let reg2 = /作者: (.*)/;
                             let author = "";
-                            if(obj.match(reg2) == null) {
-                                author = "未知";
+                            if(author == "作者: ") {
+                                author = "作者: 未知";
                             }else {
-                                author = obj.match(reg)[0];
+                                author = obj.match(reg2)[0];
                             }
 
-                            let reg3 = /p+[/]+\d{2}/;
-                            // console.log(typeof url);
+                            let reg3 = /p\/(\d)/;
+                            // console.log(obj.match(reg2));
                             let classify = url.match(reg3)[0];
-                            
                             let tag = "";
-                            console.log(classify, author)
+                            // console.log(classify, author);
                             if(classify == "p/2") {
                                 tag = "民大要闻";
                             }else if(classify == "p/7") {
@@ -106,7 +105,7 @@ crawler2 = () => {
                                 }
                             })
 
-                            // console.log(pageList);
+                            console.log(pageList);
                             var buf = new Buffer(pageListArr); //存放二进制数据的缓存区
                             fs.writeFile('./brief.json', JSON.stringify(pageListArr), function(err) {
                                 if (err) console.log('写文件操作失败');
@@ -120,10 +119,11 @@ crawler2 = () => {
         })
     }
     getPageList("https://www.scuec.edu.cn/s/329/t/1619/p/2/i/66/list.htm");
-    getPageList("https://www.scuec.edu.cn/s/329/t/1619/p/2/i/65/list.htm");
-    getPageList("https://www.scuec.edu.cn/s/329/t/1619/p/2/i/64/list.htm");
-*/
-    getNoticeList = () => {                 //通知公告
+    // getPageList("https://www.scuec.edu.cn/s/329/t/1619/p/2/i/65/list.htm");
+    // getPageList("https://www.scuec.edu.cn/s/329/t/1619/p/2/i/64/list.htm");
+    // getPageList("https://www.scuec.edu.cn/s/329/t/1619/p/7/list.htm");
+
+    /*getNoticeList = () => {                 //通知公告
         http.get(url[0], (res) => {
             let html = "";
             res.on('data', (data) => {
@@ -255,7 +255,7 @@ crawler2 = () => {
             console.log('获取课程数据出错！');
         })
     }
-    getNoticeList();
+    getNoticeList();*/
 }
 
 crawler2();
