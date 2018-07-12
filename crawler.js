@@ -97,11 +97,11 @@ crawler = () => {
                                 titleBrief: res
                             }
                             // titleList["titleBrief"] = res;
-                            pageBrief.push(brief);
-                            var buf = new Buffer(pageBrief); //存放二进制数据的缓存区
-                            fs.writeFile('./brief.json', JSON.stringify(pageBrief), function(err) {
-                                if (err) console.log('写文件操作失败');
-                            });
+                            // pageBrief.push(brief);
+                            // var buf = new Buffer(pageBrief); //存放二进制数据的缓存区
+                            // fs.writeFile('./brief.json', JSON.stringify(pageBrief), function(err) {
+                            //     if (err) console.log('写文件操作失败');
+                            // });
                         })
 
                     var buf = new Buffer(page); //存放二进制数据的缓存区
