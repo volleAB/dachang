@@ -3,11 +3,12 @@ const cheerio = require("cheerio");
 const fs = require('fs');
 const url = ["https://www.scuec.edu.cn/s/1/t/560/p/2/i/170/list.htm", "https://www.scuec.edu.cn/s/329/t/1619/p/2/i/66/list.htm"];
 
+let allArr = [];
 let pageListArr = [];
 let noticeListArr = [];
 
 crawler2 = () => {
-    /*
+    
     getPageList = (url) => {              //对新闻网进行爬虫
         http.get(url, (res) => {
             let html = '';
@@ -60,10 +61,12 @@ crawler2 = () => {
 
                             let reg2 = /作者: (.*)/;
                             let author = "";
+
                             if(author == "作者: ") {
                                 author = "作者: 未知";
                             }else {
-                                author = obj.match(reg2)[0];
+                                // author = obj.match(reg2)[0];
+                                author = obj.match(reg2);
                             }
 
                             let reg3 = /p\/(\d)/;
@@ -110,8 +113,8 @@ crawler2 = () => {
                             })
 
                             // console.log(pageList);
-                            var buf = new Buffer(pageListArr); //存放二进制数据的缓存区
-                            fs.writeFile('./brief.json', JSON.stringify(pageListArr), function(err) {
+                            var buf = new Buffer(allArr); //存放二进制数据的缓存区
+                            fs.writeFile('./brief.json', JSON.stringify(allArr), function(err) {
                                 if (err) console.log('写文件操作失败');
                             });
                         })
@@ -119,6 +122,7 @@ crawler2 = () => {
                     // console.log(pageList.href);
                 });
                 // console.log(pageListArr);
+                allArr.push(pageListArr);
             })
         })
     }
@@ -126,7 +130,7 @@ crawler2 = () => {
     getPageList("https://www.scuec.edu.cn/s/329/t/1619/p/7/list.htm");  //教学科研
     getPageList("https://www.scuec.edu.cn/s/329/t/1619/p/3/list.htm"); //校园新闻
 
-*/
+
 
 //todo
     getNoticeList = () => {                 //通知公告
@@ -174,30 +178,22 @@ crawler2 = () => {
                                 let $ = cheerio.load(html);
                                 let obj = html.toString();
                                 noticeList.details = $("#Content").text();
-                                // console.log(noticeList.details);
+                                // console.log(noticeList.details, "4");
                                 let reg = /(\d{4}-\d{2}-\d{2})/m;
                                 let date = new Date();
 
                                 noticeList.time = obj.match(reg) ? obj.match(reg)[1] : date.getFullYear() + '-' + ((date.getMonth() + 1) > 9 ? (date.getMonth() + 1) : '0' + (date.getMonth() + 1)) + '-' + ((date.getDate()) > 9 ? (date.getDate()) : '0' + (date.getDate()));
-                                // noticeListArr.push(noticeList.time);
 
-                                // pageList.list.push(chapterData);
-                                // if (noticeListArr.length == 16) {
-
-                                //     pageList.list.sort((a, b) => {
-                                //         if (a.time > b.time) {
-                                //             return -1
-                                //         } else if (a.time < b.time) {
-                                //             return 1
-                                //         } else {
-                                //             return 0
-                                //         }
-                                //     })
-
-                                //     // filterChapters(pageList);
-
-                                // }
-
+                                noticeListArr.sort((a, b) => {
+                                    if (a.time > b.time) {
+                                        return -1;
+                                    } else if (a.time < b.time) {
+                                        return 1;
+                                    } else {
+                                        return 0;
+                                    }
+                                })
+                                // console.log(noticeListArr, "0");
                             })
                         }).on('error', function(e) {
                             console.log('获取课程数据出错2！');
@@ -210,63 +206,57 @@ crawler2 = () => {
                             })
 
                             res.on('end', function() {
-                                var $ = cheerio.load(html);
-                                var date = /(\d{4}-\d{2}-\d{2})/g;
+                                let $ = cheerio.load(html);
+                                let date = /(\d{4}-\d{2}-\d{2})/g;
                                 if ($('.description').text()) {
-                                    var str = $('.description').text();
+                                    let str = $('.description').text();
                                     noticeList.time = str.match(date)[0];
                                     noticeList.details = $(".article").text();
-                                    // console.log(noticeList.details);
-                                    // noticeListArr.push(noticeList.time);
-                                    noticeListArr.push(noticeList.details);
+                                    // console.log(noticeList.details, "3");
+
+
                                 } else if($('#articinfo').text()){
-                                    var str = $('#articinfo').text() || $("#th_content>h4").text();
+                                    let str = $('#articinfo').text() || $("#th_content>h4").text();
                                     if(str.match(date) == null) {
                                         noticeList.time = str.match(date);
                                     }else {
                                         noticeList.time = str.match(date)[0];
                                     }
-                                    if(noticeList.time == null) {
-                                    }
                                     noticeList.details = $(".list_right_content").find("table").text();
-                                    // console.log(noticeList.details);
-                                    // noticeListArr.push(noticeList);
-                                    // noticeListArr.push(noticeList.time);  
-                                    noticeListArr.push(noticeList.details);
+                                    // console.log(noticeList.details, "0");
+
                                 }else if($(".th_c_text").text()) {
                                     noticeList.details = $(".th_c_text").text();
-                                    // console.log(noticeList.details);
-                                    // noticeListArr.push(noticeList.time);
-                                    noticeListArr.push(noticeList.details);
+                                    // console.log(noticeList.details, "1");
                                 }else {
-                                    noticeList.time = "";
+                                    noticeList.time = "1";
                                 }
                                 
+                                noticeListArr.push(noticeList);
 
-                                // pageList.list.push(chapterData);
-                                // if (noticeListArr.length == 16) {
+                                noticeListArr.sort((a, b) => {
+                                    if (a.chapterTime > b.chapterTime) {
+                                        return -1
+                                    } else if (a.chapterTime < b.chapterTime) {
+                                        return 1
+                                    } else {
+                                        return 0
+                                    }
+                                })
 
-                                //     pageList.list.sort((a, b) => {
-                                //         if (a.chapterTime > b.chapterTime) {
-                                //             return -1
-                                //         } else if (a.chapterTime < b.chapterTime) {
-                                //             return 1
-                                //         } else {
-                                //             return 0
-                                //         }
-                                //     })
-
-                                //     // filterChapters(pageList)
-
-                                // }
-                        
                             })
                         }).on('error', function(e) {
                             console.log('获取课程数据出错2！');
                         })
                     }
                     noticeListArr.push(noticeList);
-                    console.log(noticeListArr);
+                    allArr.push(noticeListArr);
+
+                    var buf = new Buffer(allArr); //存放二进制数据的缓存区
+                    fs.writeFile('./brief.json', JSON.stringify(allArr), function(err) {
+                        if (err) console.log('写文件操作失败');
+                    });
+                    // console.log(noticeListArr);
                 })
             })
         }).on(('error'), function (e) {
@@ -277,6 +267,6 @@ crawler2 = () => {
     getNoticeList();
 }
 
-crawler2();
+// crawler2();
 
 module.exports = crawler2;
