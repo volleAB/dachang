@@ -265,6 +265,6 @@ crawler2 = () => {
     }
 }
 
-// crawler2();
+crawler2();
 
 module.exports = crawler2;

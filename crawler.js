@@ -1,156 +1,135 @@
-const http = require('https');
-const cheerio = require('cheerio');
-var promise = require('bluebird');
-const url = ['','https://www.scuec.edu.cn/s/329/t/1619/p/2/list.htm'];
+const http = require("https");
+const cheerio = require("cheerio");
 const fs = require('fs');
-// var page = [];
-// var pageNum = 0;
-var pageBrief = [];
+
+let allArr = [];
+let pageListArr = [];
+let sign
 
 crawler = () => {
     
-    getPageList = (url, numj) => {
-        var page = [];
-        var page0 = {
-            list: []
-        }
-        var page1 = {
-            list: []
-        }
-        var page2 = {
-            list: []
-        }
+    getPageList = (url) => {             //对新闻网进行爬虫
         http.get(url, (res) => {
-            var html = '';
+            let html = '';
             res.on('data', (data) => {
                 html += data;
             })
 
             res.on('end', () => {
-                var $ = cheerio.load(html);
-                var PageList = $('.columnStyle');
-                var PageNums = $('#LIST_PAGINATION_COUNT');
-                // console.log(PageNums);
-                PageNum = parseInt(PageNums.text());
+                let $ = cheerio.load(html);
+                let i = 0;
 
-                PageList.each(function (index, element) {
-                    var title = $(this);
-                    var titleText = title.find('font').text();
-                    var titleHref = title.find('a').attr("href");
-                    var titleTime = title.find('.postTime').text();
+                let pageListTitle = $(".columnStyle");
+                // let pageNum = $("#LIST_PAGINATION_COUNT");
 
-                    var reg = /^\//;
-                    titleList = {
-                        titleText: titleText,
-                        titleHref: reg.test(titleHref) ? 'https://www.scuec.edu.cn' + titleHref : titleHref,
-                        titleTime: titleTime
-                    }
-                    // console.log(titleList);
-                    if (!numj) {
-                        page0.list.push(titleList);
-                        page.push(page0);
-                    }
-                    else if (numj == 1) {
-                        page1.list.push(titleList);
-                        page.push(page1);
-                    }
-                    else if (numj == 2) {
-                        page2.list.push(titleList);
-                        page.push(page2);
-                    }
-                    else {
-                        console.log('over');
+                pageListTitle.each(function (index, element) {
+                    let title = $(this);
+                    // let titleText = title.find('font').text();
+                    let titleHref = title.find('a').attr("href");
+                    // let titleTime = title.find('.postTime').text();
+
+                    let reg = /^\//;
+
+                    let pageList = {
+                        title: '',
+                        author: '',
+                        time: '',
+                        href: reg.test(titleHref) ? 'https://www.scuec.edu.cn' + titleHref : titleHref,
+                        details: '',
+                        tag: '',
+                        id: ''
                     }
 
-                    //获取文章摘要
-                    //todo
-
-                    /**
-                     * http.get(titleList.titleHref, (res) => {
-                        var html = '';
+                    
+                    http.get(pageList.href, (res) => {
+                        let html = '';
                         res.on('data', (data) => {
                             html += data;
                         })
-            
-                        res.on('end', () => {
-                            // console.log(titleList)
-                            var $ = cheerio.load(html);
-                            var mes = $('.single-content').text();
-                            var Brief = mes.slice(10,100);
-                            titleList["titleBrief"] = Brief;
-                            // count.push(titleList["titleBrief"]);
-                            page.push(titleList);
 
-                            var buf = new Buffer(page); //存放二进制数据的缓存区
-                            fs.writeFile('./message.json', JSON.stringify(page), function(err) {
+                        res.on('end', () => {
+                            let $ = cheerio.load(html);
+                            let title = $('.single-header').find('h2').text();
+                            let obj = $('.article_author').text();
+                            let mes = $('.single-content').text();
+
+                            let date = new Date();
+                            let reg = /(\d{4}-\d{2}-\d{2})/m;
+                            let time = obj.match(reg) ? obj.match(reg)[1] : date.getFullYear() + '-' + ((date.getMonth() + 1) > 9 ? (date.getMonth() + 1) : '0' + (date.getMonth() + 1)) + '-' + ((date.getDate()) > 9 ? (date.getDate()) : '0' + (date.getDate()));
+                            
+
+                            let reg2 = /作者: (.*)/;
+                            let author = "";
+
+                            if(author == "作者: ") {
+                                author = "作者: 未知";
+                            }else {
+                                // author = obj.match(reg2)[0];
+                                author = obj.match(reg2);
+                            }
+
+                            let reg3 = /p\/(\d)/;
+                            // console.log(obj.match(reg2));
+                            let classify = url.match(reg3)[0];
+                            let tag = "";
+                            // console.log(classify, author);
+                            if(classify == "p/2") {
+                                tag = "民大要闻";
+                            }else if(classify == "p/7") {
+                                tag = "科研教学";
+                            }else if(classify == "p/10") {
+                                tag = "民大人物";
+                            }else if(classify == "p/6") {
+                                tag = "媒体民大";
+                            }else if(classify == "p/3") {
+                                tag = "校园新闻";
+                            }else if(classify == "p/4") {
+                                tag = "大学讲坛";
+                            }else if(classify == "p/11") {
+                                tag = "校园视点";
+                            }else {
+                                tag = "其他";
+                            }
+                             
+
+                            pageList.title = title;
+                            pageList.time = time;
+                            pageList.details = mes;
+                            pageList.author = author;
+                            pageList.tag = tag;
+                            pageList.id = i++;
+
+                            pageListArr.push(pageList);
+
+                            pageListArr.sort((a, b) => {    //排序
+                                if (a.time > b.time) {
+                                    return -1;
+                                } else if (a.time < b.time) {
+                                    return 1;
+                                } else {
+                                    return 0;
+                                }
+                            })
+
+                            // console.log(pageList);
+                            var buf = new Buffer(allArr); //存放二进制数据的缓存区
+                            fs.writeFile('./brief.json', JSON.stringify(allArr), function(err) {
                                 if (err) console.log('写文件操作失败');
                             });
+                            sign = true
                         })
                     })
-                     */
-                    
-                    getMes(titleList.titleHref)
-                        .then((res) => {
-                            var brief = {
-                                titleHref: titleList.titleHref,
-                                titleTime: titleList.titleTime,
-                                titleBrief: res
-                            }
-                            // titleList["titleBrief"] = res;
-                            // pageBrief.push(brief);
-                            // var buf = new Buffer(pageBrief); //存放二进制数据的缓存区
-                            // fs.writeFile('./brief.json', JSON.stringify(pageBrief), function(err) {
-                            //     if (err) console.log('写文件操作失败');
-                            // });
-                        })
 
-                    var buf = new Buffer(page); //存放二进制数据的缓存区
-                    fs.writeFile('./message.json', JSON.stringify(page), function(err) {
-                        if (err) console.log('写文件操作失败');
-                    });
-                })
+                });
+
+                allArr.push(pageListArr);
             })
         })
     }
-
-    //获取后三页的信息
-
-    /**
-     * getNextPageList = (num) => {
-        for(var i = num-1, j = 1; i > 63; i--, j++) {
-            var url = 'https://www.scuec.edu.cn/s/329/t/1619/p/2/i/'+i+'/list.htm';
-            getPageList(url, j);
-        }
-    }
-     */
-    
-
-    getPageList(url[1]);
-    // getNextPageList(66);
+    getPageList("https://www.scuec.edu.cn/s/329/t/1619/p/2/list.htm");  //民大要闻
+    getPageList("https://www.scuec.edu.cn/s/329/t/1619/p/3/list.htm");  //校园新闻
 }
 
-//获取文章摘要
-getMes = (url) => {
-    return new promise((reslove, reject) => {
-        http.get(url, (res) => {
-            var html = '';
-            res.on('data', (data) => {
-                html += data;
-            })
-
-            res.on('end', () => {
-                // console.log(titleList)
-                var $ = cheerio.load(html);
-                var mes = $('.single-content').text();
-                var Brief = mes.replace(/(^\s*)|(\s*$)/g, "").slice(0,100)
-                // titleList["titleBrief"] = Brief;
-                // console.log(Brief);
-                reslove(Brief);
-            })
-
-        })
-        
-    })
-}
 crawler();
+
 module.exports = crawler;
