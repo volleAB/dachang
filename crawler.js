@@ -1,14 +1,16 @@
 const http = require("https");
 const cheerio = require("cheerio");
 const fs = require('fs');
-
-let allArr = [];
-let pageListArr = [];
-let sign
+const Promise = require('bluebird');
+const scuecUrl = ["https://www.scuec.edu.cn/s/329/t/1619/p/2/list.htm","https://www.scuec.edu.cn/s/329/t/1619/p/3/list.htm"]
 
 crawler = () => {
+    let allArr = [];
+    let schoolNews = [];
+    let schoolNews2 = [];
     
-    getPageList = (url) => {             //对新闻网进行爬虫
+    getPageList = (url) => {              //对新闻网进行爬虫
+        let pageListArr = [];
         http.get(url, (res) => {
             let html = '';
             res.on('data', (data) => {
@@ -18,6 +20,7 @@ crawler = () => {
             res.on('end', () => {
                 let $ = cheerio.load(html);
                 let i = 0;
+                
 
                 let pageListTitle = $(".columnStyle");
                 // let pageNum = $("#LIST_PAGINATION_COUNT");
@@ -111,25 +114,20 @@ crawler = () => {
                                 }
                             })
 
-                            // console.log(pageList);
-                            var buf = new Buffer(allArr); //存放二进制数据的缓存区
                             fs.writeFile('./brief.json', JSON.stringify(allArr), function(err) {
                                 if (err) console.log('写文件操作失败');
                             });
-                            sign = true
                         })
                     })
-
                 });
-
                 allArr.push(pageListArr);
             })
         })
     }
-    getPageList("https://www.scuec.edu.cn/s/329/t/1619/p/2/list.htm");  //民大要闻
-    getPageList("https://www.scuec.edu.cn/s/329/t/1619/p/3/list.htm");  //校园新闻
+    getPageList(scuecUrl[0]);
+    getPageList(scuecUrl[1]);
 }
 
-crawler();
+// crawler();
 
 module.exports = crawler;

@@ -20,12 +20,15 @@ app.use(cors({
 }))
 
 setInterval(crawler, 3000000);
+// setInterval(crawler, 30000);
 
 router.get('/brief', async(ctx, next) => {
     return new Promise(function(resolve, reject) {
         fs.readFile(file, 'utf8', function(err, data) {
             var page = JSON.parse(data.toString());
-            ctx.body = { mes: page };
+            var i = 0;
+            i++;
+            ctx.body = { mes: page, cout: i };
             resolve(next())
         });
     });
@@ -36,5 +39,5 @@ router.get('/brief', async(ctx, next) => {
 
 app.use(router.routes());
 app.use(router.allowedMethods());
-app.listen(8070);
-console.log('app started at port 8070...');
+app.listen(8060);
+console.log('app started at port http://localhost:8060/brief/');

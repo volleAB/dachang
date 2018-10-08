@@ -127,7 +127,7 @@ crawler2 = () => {
         })
     }
     getPageList("https://www.scuec.edu.cn/s/329/t/1619/p/2/list.htm");  //民大要闻
-    getPageList("https://www.scuec.edu.cn/s/329/t/1619/p/7/list.htm");  //教学科研
+    // getPageList("https://www.scuec.edu.cn/s/329/t/1619/p/7/list.htm");  //教学科研
 
 
 

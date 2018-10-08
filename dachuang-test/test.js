@@ -16,6 +16,3 @@
 // console.log(url.match(reg2)[0])
 
 
-
-
-
