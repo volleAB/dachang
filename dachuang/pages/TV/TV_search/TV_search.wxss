@@ -1,0 +1,40 @@
+.nav_main{
+    position: relative;
+}
+.image_search{
+    width: 50rpx;
+    height: 50rpx;
+    opacity:1;
+}
+.TV_search{
+    display: flex;
+    margin-top: 20rpx;
+    margin-bottom: 10rpx;
+}
+.search_input{
+    border: 1px solid #ccc;
+    width: 83%;
+    border-radius: 10rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    margin-left: 20rpx;
+    padding-left:20rpx;
+    font-size: 26rpx;
+}
+.content{
+  margin: 10rpx;
+}
+.item{
+  margin:0 0 40rpx;
+}
+.TV_content{
+    line-height:150%;
+    font-size: 28rpx;
+    text-indent: 20px;
+    margin:2% 3%;
+}
+.img{
+  width: 70%;
+  height: 100%;
+
+}

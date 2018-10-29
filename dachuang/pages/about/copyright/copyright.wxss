@@ -1,0 +1,16 @@
+/**Gy.wxss**/
+.container{
+    background: #fff;
+    padding: 0;
+    font-size: 11pt;
+    font-family: "Microsoft JhengHei";
+}
+.footer{
+    display: flex;
+    flex-direction: column;
+    font-size: 9pt;
+    line-height: 150%;
+    text-align: center;
+    padding: 60% 0 15rpx;
+    color: #c2c2c2;
+}

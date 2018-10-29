@@ -1,0 +1,38 @@
+<!--lists.wxml-->
+<view class="con">
+  <view class="top">
+    <view class="view_search">
+      <input type="text" class="search_input" placeholder="根据时间或关键词搜索" bindinput="inputValue" />
+      <view class="search_button" bindtap="click">
+        <!--<navigator url="/pages/weizong/weizong_index/weizong_index" open-type="navigate" hover-class="none">-->
+        <image src="{{searchImg}}" class="image_search"></image>
+        <!--</navigator>-->
+      </view>
+    </view>
+  </view>
+
+  <view class="warp">
+    <view class="wz">
+      <view class="pages-row">
+        <image src="{{weizong}}" class="weizong_img" mode="scaleToFill"></image>
+      </view>
+      <text>我们都是青年梦想家</text>
+    </view>
+    <view class="border" style="display:flex;flex-wrap:wrap">
+      <block wx:for="{{magzineList}}" wx:key="item.id">
+        <!-- <navigator url="{{navigateUrl}}"> -->
+        <!--此处应该修改接口返回期数作为第四个参数-->
+        <navigator url="/pages/weizong/weizong_xiangqing/weizong_xiangqing?id={{item[3]}}&title={{item[0]}}&name={{item[1]}}">
+          <view class="text">
+            <text class="title" style="display:block">{{item[0]}}</text>
+            <text class="small_description" style="display:block">{{item[1]}}</text>
+            <image class="image" src="{{item[2]}}"></image>
+          </view>
+        </navigator>
+      </block>
+    </view>
+
+    <!--提醒消息-->
+    <text class="content-ending">已经到底啦(๑╹◡╹)ﾉ"""</text>
+  </view>
+</view>

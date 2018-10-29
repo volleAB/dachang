@@ -1,0 +1,7 @@
+<!--Gy.wxml-->
+<view class="container">
+  <view class="footer">
+    <text>2018 高校小程序大赛</text>
+    <text>All Rights Reserved技术支持:......</text>
+  </view>
+</view>

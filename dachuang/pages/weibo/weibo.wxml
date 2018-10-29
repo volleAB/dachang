@@ -1,0 +1,85 @@
+<view class="line">
+  <text></text>
+</view>
+<view class="con">
+  <view class="top">
+    <view class="topborder">
+      <image src="https://img.t.sinajs.cn/t4/appstyle/widget/images/library/base/wb_logo16_a.png?id=1367910055834"></image>
+      <text>微博</text>
+    </view>
+    <view class="item1">
+      <image class="item1-logo" src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2655611982,1826916664&fm=23&gp=0.jpg" mode="aspectFill"></image>
+       <image class="v_top" src="../../img/icon_out.png"></image> 
+    </view>
+    <view class="item2">
+      <text>中南民族大学</text>
+      <image src="{{girl}}"></image>
+    </view>
+    <view class="item3">
+      <text>微博认证：中南民族大学官方微博</text>
+    </view>
+  </view>
+ 
+  <view class="list">
+    <view class="menus">
+      <view class="menus_left">所在地</view>
+      <view class="menus_right">湖北</view>
+    </view>
+    <view class="menus">
+      <view class="menus_left">简介</view>
+      <view class="menus_right">笃信好学，自然宽和</view>
+    </view>
+  </view>
+
+   <!-- 内容 -->
+  <!-- <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;" class="list" bindscrolltolower="bindDownLoad" bindscroll="scroll" bindscrolltoupper="refresh"> -->
+    <!-- <view class="item" wx:for="{{list}}" wx:key="item.id">
+      <view class="item-con">
+        <view class="item-left">
+          <image src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2655611982,1826916664&fm=23&gp=0.jpg" mode="aspectFill"></image>
+        </view>
+        <view class="item-right">
+          <view class="title">
+            <text>中南民族大学</text>
+            <image src="../../img/icon_out.png"></image>
+          </view>
+          <view class="source">
+            <view class="time">{{item.post_time}}</view>
+            <view class="from">来自 {{item.msg_from}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="content">
+        <view>
+          <text>{{item.text_content}}</text>
+          <view class="cite">
+            <view class="cite_text">
+              <text>{{item.cite}}</text>
+            </view>
+          </view>
+        </view>
+        <image data-src="{{item.img}}" src="{{item.img}}" bindtap="previewImage" class="img {{item.img==''?'hideImg':'showImg'}}"></image>
+      </view>
+      <view class="spill">
+        <text></text>
+      </view>
+      <view class="bottom">
+        <view class="bottom_1">
+          <image src="{{transmit}}"></image>
+          <view class="bottom1_num1">{{item.others_repost_num}}</view>
+        </view>
+        <view class="bottom_2">
+          <image src="{{comment}}"></image>
+          <view class="bottom1_num1">{{item.others_talk_num}}</view>
+        </view>
+      </view>
+    </view> -->
+
+    <html xmlns:wb="http://open.weibo.com/wb">
+      <head>
+        <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+      </head>
+      <wb:show uid="1871615845" width="850" verifier="a4b838a0"></wb:show>
+    </html>
+  <!-- </scroll-view> -->
+</view>

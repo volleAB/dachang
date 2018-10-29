@@ -1,0 +1,32 @@
+/*mdyw.wxss*/
+@import "../../../wxParse/wxParse/wxParse.wxss";
+.container {
+    background: #fff;
+    padding: 0 35rpx;
+}
+
+.title {
+  margin: 10px 0;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.author {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.author text {
+  display: block;
+}
+
+.line {
+	width:100%;
+	height:6px;
+	background-color:#efefef;
+}
+
+.details {
+  margin-bottom: 20px;
+  text-indent: 2em;
+}

@@ -1,0 +1,133 @@
+/**index.wxss**/
+.swiper {
+  height: 280rpx;
+  width: 100%;
+}
+.swiper image {
+  height: 100%;
+  width: 100%;
+}
+.section {
+  width: 100%;
+  height: 100%;
+  background-color: #efeff4; 
+}
+.pages-row {  
+  width: 100%;  
+  display: flex;  
+  flex-direction: row;  
+  justify-content: flex-start;  
+} 
+ 
+.pages-item { 
+  width: 31%;
+  height: 250rpx;
+  margin:10rpx;
+  border: 0rpx;
+  border-radius: 8rpx;
+  background-color: #fff;
+  text-align: center; 
+  align-items: center;  
+  font-family: "Microsoft JhengHei";
+  display: flex;  
+  font-size: 14px;
+  flex-direction: column;  
+  
+} 
+ .pages-icon{
+   margin:25% 25% 0 25%;
+   text-align: center;
+} 
+.pages-icon-wrapper {  
+  display: flex;  
+  justify-content: flex-start;  
+  align-items: center;  
+  margin: 10rpx;  
+  border-radius: 10%;  
+  height: 40%;  
+}  
+
+.pages-icon-wrapper-no-bg {  
+  display: flex;  
+  justify-content: flex-start;  
+  align-items: center;  
+  margin: 0rpx;  
+  height: 50%;  
+} 
+
+.pages-icon {  
+  width: 100rpx;  
+  height: 100rpx;
+  text-align: center;
+}  
+
+.pages-text-wrapper {  
+  text-align: center;  
+}  
+
+.pages-text {  
+  font-weight: bolder;
+  text-align: center; 
+} 
+.con{
+  margin-top: 20rpx;
+}
+
+.user{
+  margin-top: 57%;
+}
+.top2 {
+    height: 720rpx;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.top2 .bg {
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 50%;
+    width: 100%;
+}
+.pages-row2 {
+  margin-top: 63.5%;  
+  width: 100%;  
+  display: flex;  
+  flex-direction: row;  
+  justify-content:space-around;
+  opacity: 0.8;
+} 
+.pages-item2 {  
+  padding-right: 5rpx;
+  padding-bottom: 5rpx;
+  width: 27%;  
+  text-align: center; 
+  align-items: center;  
+  font-family: "Microsoft JhengHei";
+  display: flex;  
+  font-size: 14px;
+  flex-direction: column;  
+  margin-top: 4%;
+  margin-left: 2%;
+  height: 30%;
+} 
+.pages-icon2 {  
+  width: 200rpx;  
+  height: 200rpx;
+  text-align: center;
+}  
+.pages-item2 text{
+  color: #000000;
+}
+.bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  width: 100%;
+}

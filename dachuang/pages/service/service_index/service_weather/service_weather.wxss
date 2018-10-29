@@ -1,0 +1,18 @@
+/* pages/service/service_index/service_weather/service_weather.wxss */
+page {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom right, #43e97b 0%, #38f9d7 100%);
+}
+.weather {
+  width: 100%;
+  height: 100%;
+  margin: 100rpx auto;
+}
+.con {
+  height:600rpx;
+  padding: 100rpx;
+}
+.con text {
+  font-size:50rpx;
+}

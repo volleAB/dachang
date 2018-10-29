@@ -1,0 +1,22 @@
+/* pages/service/service_index/service_douban/service_douban.wxss */
+.title {
+  width: 100%;
+  height: 98rpx;
+  font-size: 60rpx;
+  text-align: center;
+  line-height:1.5;
+  color: #ffffff;
+  background: #5ee5e6;
+}
+/* .hot {
+  margin-top: 98rpx;
+  z-index: 20;
+} */
+.item {
+  width: 100%;
+}
+.item-list {
+  width: 100%;
+  padding: 4rpx 0rpx 40 4rpx;
+  border-bottom: 2rpx solid #5ee5e6;
+}

@@ -1,0 +1,12 @@
+<!--Fk.wxml-->
+<view class="container">
+  <view class="issues-panel">
+    <!--<input name="title" class="issues-input" placeholder="请写下你要反馈的标题（限20字）" bindinput="inputEventHandle" bindfocus="inputFocusEventHandle" bindconfirm="inputConfirmEventHandle" bindblur="inputBlurEventHandle" maxlength="20"/>-->
+    <input name="title" id="title_content" class="issues-input" placeholder="请写下你要反馈的标题（限20字）" maxlength="20"  bindinput ="titleInput"/>
+    <textarea name="content" id="content_content" class="issues-textarea" placeholder="请详细说明你的反馈内容" bindblur="bindTextAreaBlur" value="{{content}}" maxlength="100" auto-height></textarea>
+  </view>
+  <text class="issues-remind">您的反馈将会提交至.....。</text>
+  <view class="submit-btn" bindtap="submit">
+    <text>提交反馈</text>
+  </view>
+</view>

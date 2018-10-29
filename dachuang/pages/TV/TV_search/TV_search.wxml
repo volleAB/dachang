@@ -1,0 +1,20 @@
+<view class="nav_main">
+  <view class="TV_search">   
+    <input type="text" class="search_input" placeholder="根据关键词搜索" auto-focus="true" bindinput="inputValue"/>
+    <view  class="search_button" bindtap="click">
+        <image src="{{search}}" class="image_search"></image>
+    </view>
+  </view>
+  <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;" class="list" bindscrolltolower="bindDownLoad" bindscroll="scroll" bindscrolltoupper="refresh">
+      <view class="item" wx:for="{{searchContent}}" wx:key="item.television_program_id">
+        <video id="myVideo" src="{{item.video_url}}"   style="width:100%;"  objectFit="fill"></video>
+        <view class="content">
+          <view class="TV_content">{{item.video_introduction}}</view>
+        </view>
+      </view> 
+  </scroll-view>
+   <view class="body-view">
+      <loading hidden="{{hidden}}" bindchange="loadingChange">加载中...
+      </loading>
+    </view>
+</view>

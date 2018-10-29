@@ -1,0 +1,3 @@
+<view class="weather"> 
+  <view class='con' style='height: {{height}}'><text>{{weatherData}}</text></view> 
+</view>

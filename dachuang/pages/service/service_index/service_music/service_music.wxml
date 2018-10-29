@@ -1,0 +1,9 @@
+<!--pages/service/service_douban/service_douban.wxml-->
+<view class='title'>QQ音乐流行榜</view>
+<view class='hot'>
+  <view class='item' wx:for="{{songlist}}" wx:key='property' wx:if="{{index<30}}">
+    <view class='item-list' bindtap='play' data-url="{{item.url}}" data-lyr="{{item.songid}}">
+      {{index+1}}.{{item.songname}}---{{item.singername}}
+    </view>
+  </view>
+</view>

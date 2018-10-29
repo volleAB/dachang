@@ -1,0 +1,17 @@
+
+<view class='content-item'>
+
+  <view class="list-item">
+  <!-- <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;" class="list" bindscrolltolower="bindDownLoad" bindscroll="scroll" bindscrolltoupper="refresh"> -->
+    <view class="list-itemcontent" wx:for="{{searchContent}}" wx:key="item.id">
+      <navigator url="/pages/weizong/weizong_xiangqing/weizong_xiangqing?id={{item.list_title}}" hover-class="none">
+        <view class="subtitle-top">{{item.list_title}}</view>
+        <!--<image style="height:200rpx; width:200rpx" src="{{items.program_picture_url}}" hover-class="none"></image>-->
+      </navigator>
+      <!-- <view class="subtitle-top">\n
+        
+      </view> -->
+    </view>
+    <!-- </scroll-view> -->
+  </view>
+</view>

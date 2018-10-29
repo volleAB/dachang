@@ -1,0 +1,17 @@
+<view class="container">
+  <view class='option' bindtap='baidu'>
+      <image class='img' src='../../../img/location.png'></image>
+      <text>百度地图</text><i class='right'>></i>
+      <i class="border"></i>
+  </view>
+  <view class='option' bindtap='music'>
+    <image class='img' src='../../../img/music.png'></image>
+    <text>QQ音乐</text><i class='right'>></i>
+    <i class="border"></i>
+  </view>
+  <view class='option' bindtap='weather'>
+    <image class='img' src='../../../img/weather.png'></image>
+    <text>百度天气</text><i class='right'>></i>
+    <i class="border"></i>
+  </view>
+</view>

@@ -1,0 +1,58 @@
+<swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+  <block wx:for="{{movies}}" wx:for-index="index" wx:key='index'>    
+    <swiper-item>    
+      <image src="{{item.url}}" class="slide-image" mode="aspectFill"/>    
+    </swiper-item>    
+  </block>    
+</swiper>
+ <view class="section"> 
+  <view class="pages-row">
+    <navigator hover-class="none" url="/pages/news/news_index/news_index" class="pages-item">
+      <view>
+         <image class="pages-icon" src="{{newspaper}}"></image> 
+        <text>民大新闻</text>
+      </view>
+    </navigator>
+    <navigator hover-class="none" url="/pages/weibo/weibo" class="pages-item">
+      <view>
+         <image class="pages-icon" src="{{weibo}}"></image> 
+        <text>官方微博</text>
+      </view>
+    </navigator>
+    <navigator url="/pages/TV/TV_index/TV_index" class="pages-item">
+      <view>
+         <image class="pages-icon" src="{{television}}"></image> 
+        <text>民大电视</text>
+      </view>
+    </navigator>
+  </view>
+  <view class="pages-row">
+    <navigator url="/pages/developing/developing" class="pages-item">
+      <view>
+         <image class="pages-icon" src="{{live}}"></image> 
+        <text>双塔直播</text>
+      </view>
+    </navigator>
+    <navigator url="/pages/weizong/weizong_index/weizong_index" class="pages-item">
+      <view>
+         <image class="pages-icon" src="{{magazine}}"></image> 
+        <text>微众杂志</text>
+      </view>
+    </navigator>
+    <navigator url="/pages/broadcast/broadcast_index/broadcast_index" class="pages-item">
+      <view>
+         <image class="pages-icon" src="{{broadcast}}"></image> 
+        <text>民大广播</text>
+      </view>
+    </navigator>
+  </view>
+  <view class="pages-row">
+    
+    <navigator url="/pages/developing/developing" class="pages-item">
+      <view>
+         <image class="pages-icon" src="{{other}}"></image> 
+        <text>其 他</text>
+      </view>
+    </navigator>
+  </view>
+</view>

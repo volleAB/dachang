@@ -1,0 +1,52 @@
+<!--personal.wxml-->
+
+<view class="top">
+  <image src="{{background}}" class="bg"></image>
+  <view class="topcontent">
+    <image src="{{userInfo.avatarUrl}}"></image>
+    <view class="nickname">{{userInfo.nickName}}</view>
+  </view>
+</view>
+
+<view id="menus">
+  <view class="content" bindtap="viewFk">
+    <view class="info">
+      <view class="icon">
+        <image src="{{feedback}}" class="icon"></image>
+      </view>
+      <view class="view">
+        <text>反馈</text>
+      </view>
+    </view>
+    <view class="content-right">
+      <text></text>
+      <view class="right">
+        <image src="{{rightjian}}" class="jiantou"></image>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view id="menus">
+  <view class="content" bindtap="viewGy">
+    <view class="info">
+      <view class="icon">
+      <image src="{{about}}" class="icon"></image>
+      </view>
+      <view class="view">
+        <text>关于</text>
+      </view>
+    </view>
+    <view class="content-right">
+      <view class="right">
+        <image src="{{rightjian}}" class="jiantou"></image>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="imag">
+  <view class="logout-btn" bindtap="bind">
+    <text>确认退出</text>
+  </view>
+</view>

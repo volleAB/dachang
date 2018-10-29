@@ -1,0 +1,54 @@
+{
+  "pages": [
+    
+    "pages/index/index_page/index_page",
+    "pages/service/service_index/service_index",
+    "pages/about/about_index/about_index",
+    "pages/broadcast/broadcast_content/broadcast_content",
+    "pages/news/news_index/news_index",
+    "pages/news/news_content/news_content",
+    "pages/about/copyright/copyright",
+    "pages/about/feedback/feedback",
+    "pages/weibo/weibo",
+    "pages/TV/TV_index/TV_index",
+    "pages/TV/TV_search/TV_search",
+    "pages/broadcast/broadcast_index/broadcast_index",
+    "pages/weizong/weizong_index/weizong_index",
+    "pages/weizong/weizong_search/weizong_search",
+    "pages/weizong/weizong_xiangqing/weizong_xiangqing",
+    "pages/developing/developing",
+    "pages/broadcast/broadcast_search/broadcast_search",
+    "pages/service/service_index/service_baidu/service_baidu",
+    "pages/service/service_index/service_music/service_music",
+    "pages/service/service_index/service_weather/service_weather"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#5ee5e6",
+    "navigationBarTitleText": "NEW校园",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index_page/index_page",
+        "text": "首页",
+        "iconPath": "img/index/index.png",
+        "selectedIconPath": "img/index/click_index.png"
+      },
+      {
+        "pagePath": "pages/service/service_index/service_index",
+        "text": "服务",
+        "iconPath": "img/index/service.png",
+        "selectedIconPath": "img/index/click_service.png"
+      },
+      {
+        "pagePath": "pages/about/about_index/about_index",
+        "text": "我的",
+        "iconPath": "img/index/about.png",
+        "selectedIconPath": "img/index/click_about.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+
+<!--mdyw.wxml-->
+<import src="../../../wxParse/wxParse/wxParse.wxml" /> 
+<template is="wxParse" data="{{wxParseData:article.nodes}}" />
+<view class="line"></view>
+<view class='container'>
+  <view class='title'>{{title}}</view>
+  <view class='author'>
+    <text>{{author}}</text>
+    <text>发布时间：{{time}}</text>
+  </view>
+  <view class='details'>{{details}}</view>
+</view>
+

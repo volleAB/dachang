@@ -1,0 +1,19 @@
+<!--lists.wxml-->
+<scroll-view scroll-y='true' scroll-with-animation='true' bindscroll="scroll" scroll-top="{{scrollTop}}"> 
+<view class="containerr" bindtouchmove="handletouchmove">
+   <view class="con">
+    <block class="list" wx:for="{{list}}" wx:key="item.content_id">
+      <navigator url="/pages/news/news_content/news_content?id={{item.id}}&time={{item.time}}&title={{item.title}}&author={{item.author}}&tag={{item.tag}}"> 
+      <view class="list-item">
+        <view class="list-item-left">
+          <text class="list-item-title">{{item.title}}</text>
+          <text class="list-item-time">来自：{{item.tag}}  {{item.time}}</text><text class='list-item-tag'></text>
+            <text class="list-item-preview">{{item.preview}}</text>  
+        </view>
+      </view>
+      </navigator> 
+    </block>
+  </view> 
+</view>
+<view class="content-ending" bindtap='backToTop'>回到顶部</view>
+</scroll-view>

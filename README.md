@@ -1,3 +1,3 @@
 # dachang
 
-##  npm run start
+##  微信小程序

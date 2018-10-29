@@ -1,0 +1,285 @@
+/*写样式css3*/
+
+.line {
+  height: 2px;
+  background-color: #f57037;
+}
+
+.con {
+  background-color: #f0f0f0;
+  margin-top: 0px;
+}
+
+.top {
+  width: 100%;
+  height: 40%;
+  background-color: #fff;
+  margin-top: 0px;
+  margin-bottom: 4px;
+}
+
+.topborder {
+  height: 30px;
+  border-color: #d2d2d2;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  line-height: 30px;
+  overflow: hidden;
+  color: #595959;
+  font-size: 10pt;
+}
+
+.topborder image {
+  width: 16px;
+  height: 14px;
+  margin-left: 5%;
+  margin-right: 3%;
+}
+
+.topborder text {
+  font-size: 11pt;
+  color: #0078b6;
+}
+
+.item1 {
+  margin-top: 1%;
+  width: 100%;
+  height: 50%;
+  /* display:inherit */
+}
+
+.item1-logo {
+  width: 80px;
+  height: 80px;
+  margin-left: 38%;
+  z-index: -1;
+}
+
+.v_top {
+  height: 20px;
+  width: 20px;
+  margin-left: -5%;
+  margin-top: 18%;
+}
+
+.item2 image {
+  width: 20px;
+  height: 20px;
+  margin-top: 12px;
+  margin-left: 2%;
+}
+
+.item2 {
+  margin-top: 1%;
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.item2 text {
+  /*float: right;*/
+  line-height: 40px;
+  /*width: 85%;*/
+  text-align: center;
+  font-family: "Microsoft JhengHei";
+  font-size: 18px;
+  justify-content: center;
+}
+
+.item3 {
+  width: 100%;
+  height: 50%;
+  margin-bottom: 4px;
+  border-bottom: 4px;
+  display: flex;
+  justify-content: center;
+}
+
+.item3 text {
+  /*margin-left: 25%;*//*color: #c0c0c0;*/
+  color: #515151;
+  font-family: "Microsoft JhengHei";
+  font-size: 13px;
+}
+
+.list {
+
+  background-color: #f0f0f0;
+  border-bottom-color: #f0f0f0;
+}
+
+.menus {
+  background: #fff;
+  font: 9px;
+  height: auto;
+  width: 100%;
+  margin-top: 4px;
+  font-size: 14px;
+  display: flex;
+  flex-direction: row;
+  line-height: 50px;
+  font-family: "Microsoft JhengHei";
+}
+
+.menus_left {
+  width: 20%;
+  height: 50px;
+  margin-left: 3%;
+}
+
+.menus_right {
+  width: 70%;
+}
+
+.item {
+  /*height: 120px;*/
+  background-color: #fff;
+  /*margin-left: 2%;*/
+  margin-top: 2px;
+}
+
+.item-con {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.item-left image {
+  width: 60px;
+  height: 60px;
+  margin-top: 10%;
+  margin-right: 3%;
+  margin-left: 5%;
+}
+.item-right{
+  width: 100%;
+}
+.img {
+  width: 35%;
+  height: 100px;
+  margin-top: 4.7%;
+  margin-bottom: 4.7%;
+  margin-left: 1%;
+  margin-right: 4%;
+}
+
+.hideImg {
+  display: none;
+}
+
+.showImg {
+  display: block;
+}
+
+.text {
+  width: 56%;
+  float: left;
+  margin-top: 6%;
+  margin-left: 4%;
+  margin-bottom: 6%;
+}
+
+.title {
+  font-family: "Microsoft JhengHei";
+  font-size: 14px;
+  margin-left: 3%;
+  line-height: 30px;
+}
+
+.title text {
+  vertical-align:super;
+}
+
+.title image {
+  height: 18px;
+  width: 18px;
+  margin-left: 2%;
+  margin-top: 12px;
+}
+
+.source {
+  margin-left: 2%;
+  margin-bottom: 2%;
+  font-family: "Microsoft JhengHei";
+  font-size: 12px;
+  color: #9e9e9e;
+  display: flex;
+  flex-direction: row;
+}
+
+.from {
+  margin-left: 3%;
+}
+
+.content {
+  font-family: "Microsoft JhengHei";
+  font-size: 14px;
+  margin-left: 3%;
+  margin-right: 3%;
+  margin-bottom: 3%;
+}
+
+.cite {
+  border: 2px;
+  font-size: 12px;
+  border-color: #efefef;
+}
+
+.cite_text {
+  margin: 20px, 20px, 20px, 10px;
+  border-bottom-color: #efefef;
+  /*background-color: #b0c4de;*/
+  color: #696969;
+  border: 2px;
+}
+
+.img {
+  height: 120px;
+  width: 160px;
+}
+
+.bottom {
+  height: 30px;
+  /*line-height: 50px;*/
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  /*border-bottom: 0.5px solid #8a8a8a;*/
+}
+
+.bottom image {
+  width: 18px;
+  height: 18px;
+  margin-top: 15%;
+  padding-left: 10px;
+  padding-right: 8px;
+}
+
+.bottom_1 {
+  display: flex;
+  flex-direction: row;
+}
+
+.bottom_2 {
+  display: flex;
+  flex-direction: row;
+}
+
+.bottom_3 {
+  display: flex;
+  flex-direction: row;
+}
+
+.spill {
+  height: 2px;
+  background-color: #f0f0f0;
+}
+
+.bottom1_num1 {
+  color: #8a8a8a;
+  line-height: 30px;
+}
+
+/*#header{
+    background-image: url(../img/bg.jpg);
+}*/

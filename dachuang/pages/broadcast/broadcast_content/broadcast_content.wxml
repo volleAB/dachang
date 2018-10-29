@@ -1,0 +1,39 @@
+<loading hidden="{{loadingHidden}}">
+        加载中...
+</loading>
+<!--title-->
+<view class="detail-top">
+    <view class="top-image-left">
+        <image src="{{broadcastContent.program_picture_url}}" style="height:300rpx; width:300rpx;"></image>
+    </view>
+     <view class="top-text-right">
+        <text style="font-size: 30rpx; margin-top:12rpx;">{{broadcastName}}</text>
+        <label style="margin-top:32rpx;">
+            主播:<text style="color:deepskyblue">{{broadcastContent.program_audio_anchor}}</text>
+        </label>
+        <label style="margin-top:16rpx">
+         时长:<text>{{broadcastContent.program_audio_duration}}</text>
+        </label>
+        <label  style="margin-top:16rpx;">
+        分类:<text>{{broadcastContent.program_audio_category}}</text>  
+        </label>
+    </view>
+    
+</view>
+<!--简介-->
+<view style=" width:100%;background:white; font-size:28rpx; margin-top:20px; margin-bottom:20rpx;clear:both;">
+        <view class="intro_contain">简介内容:</view>
+        <view class="introduction">{{broadcastContent.program_introduction}}</view>
+</view>
+<view class="history">
+    <view class="history_act">历史节目</view>
+    <view  style="padding-left:40rpx">
+        <audio src="{{broadcastContent.program_audio_url}}"  controls="true" poster="{{broadcastContent.program_picture_url}}" author="" name="{{broadcastName}}" loop="true" style="width:96%;" autoplay="true"></audio>
+    </view>
+    <view class="history_acts">
+        <block wx:for="{{historyList}}" wx:key="{{item}}" class="detail-listview">
+            <audio src="{{item.program_audio_url}}" poster="{{item.program_picture_url}}" author="{{item.nickname}}" name="{{item.program_name}}" loop="true" controls="true" style="width:100%;" ></audio>
+        </block>
+    </view>
+</view>
+    

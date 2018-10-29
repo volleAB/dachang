@@ -1,0 +1,22 @@
+
+<view class="nav_main">
+  <view class="TV_search">   
+    <input type="text" class="search_input" placeholder="根据时间或关键词搜索" bindfocus="searchTvPage"/>
+    <view  class="search_button" >
+        <image src="{{search}}" class="image_search"></image>
+    </view>
+  </view>
+  <scroll-view scroll-x="true" class="nav" >
+    <view wx:for="{{televisionTitle}}" wx:key="item" class="titles">
+        <view class="nav_item {{currentTitle==item.television_title?'colorRed':'colorBlack'}}" bindtap="getTvContent" data-name="{{item.television_title}}">{{item.television_title}}</view>
+    </view>
+  </scroll-view>
+</view>
+
+ <view class="section " wx:for="{{televisionContent}}" wx:key="item">
+  <video id="myVideo" src="{{item.video_url}}"   style="width:100%;"  objectFit="fill" controls></video>
+  <view class="content">
+    <view class="TV_content">{{item.video_introduction}}</view>
+  </view>
+</view> 
+

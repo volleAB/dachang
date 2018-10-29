@@ -1,0 +1,110 @@
+/**personal.wxss**/
+page {
+  background: #f0f0f0;
+}
+.topcontent {
+  padding-top: 60px;
+  text-align: center;
+}
+.topcontent image {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+}
+.topcontent .nickname {
+  padding-top: 20px;
+  color: #fff;
+}
+.topcontent .orther {
+  padding-top: 10px;
+  font-size: 15px;
+}
+#menus {
+  background: #fff;
+  margin-top: 10px;
+  height: auto;
+  width: 100%;
+  margin-bottom: 10px;
+}
+#menus .content {
+  height: 45px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 0.5px solid #fafafa;
+}
+#menus .info .view {
+  float: left;
+}
+#menus .info .view text {
+  font-size: 15px;
+  font-family: "Microsoft JhengHei";
+  line-height: 45px;
+  padding-left: 20px;
+}
+#menus .content .right {
+  height: 45px;
+  float: right;
+  margin-right: 10px;
+  line-height: 45px;
+}
+#menus .content .right image {
+  width: 14px;
+  height: 14px;
+}
+#menus .content .viewright text {
+  font-size: 15px;
+  font-family: "Microsoft JhengHei";
+  line-height: 45px;
+  padding-right: 20px;
+}
+#menus .info .icon {
+  width: 23px;
+  height: 23px;
+  line-height: 55px;
+  padding-left: 10px;
+}
+#menus .info {
+  height: 45px;
+  border-bottom: 0.5px solid #fafafa;
+  display: flex;
+}
+#menus .content .content-right text {
+  font-size: 15px;
+  font-family: "Microsoft JhengHei";
+  line-height: 45px;
+  color: #ccc;
+}
+.logout-btn {
+  font-size: 15px;
+  font-family: "Microsoft JhengHei";
+  line-height: 85rpx;
+  height: 85rpx;
+  background: #c23a23;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  margin: 20rpx 10.75px 22.75px 10.75px;
+  border: 1px solid #c23a23;
+}
+.logout-btn:active {
+  opacity: 0.8;
+}
+.imag {
+  margin-top: 170rpx;
+}
+.top {
+  height: 260px;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.top .bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  width: 100%;
+}

@@ -1,0 +1,18 @@
+/* pages/service/service_index/service_baidu/service_baidu.wxss */
+.title {
+  width: 100%;
+  height: 98rpx;
+  font-size: 60rpx;
+  text-align: center;
+  line-height:1.5;
+  color: #ffffff;
+  background: #5ee5e6;
+}
+.map_container{ 
+    height: 300px; 
+    width: 100%; 
+} 
+.map { 
+    height: 100%; 
+    width: 100%; 
+} 

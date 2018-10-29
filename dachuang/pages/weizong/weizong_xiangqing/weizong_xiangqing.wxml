@@ -1,0 +1,98 @@
+<import src="../../../wxParse/wxParse/wxParse.wxml"/>
+<view class="mpage {{!ui.tStart? 'withAnimate': ''}}" style="left:{{ui.offsetLeft}}px;width: {{ui.windowWidth}}px" bindtouchstart="handlerStart" catchtouchmove="handlerMove" bindtouchcancel="handlerCancel" bindtouchend="handlerEnd" bindtap="handlerPageTap">
+  <scroll-view class="scrollType" bindscroll="handlerScroll" scroll-y style="height: 100%;">
+    <view class="top">
+      <view class="search">
+        <view catchtap="handlerAvatarTap" class="avatar">
+          <image src="{{icon}}"></image>
+        </view>
+      </view>
+    </view>
+    <!-- <view class="bottom"> 
+      <view wx:if="{{List.len>1}}">
+        <view wx:for="{{List}}">
+          <view class="title" bindtap="tap_ch">
+            <text>00</text>
+            {{item}}
+          </view>
+          <view class="context">
+            <view wx:for="{{Content}}" wx:key="item.id">
+              <text class="detail">{{item}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view wx:else>
+        <view class="title" bindtap="tap_ch">
+          {{ListTitle}}
+        </view>
+        <view class="context">
+          <text class="detail">{{Content}}</text>
+        </view>
+      </view>
+     </view>   -->
+    <view class="bottom">
+      <view wx:if="{{List.length>=1}}">
+         <view>
+          <view class="title" bindtap="tap_ch"> 
+            <!-- {{item}} -->
+             <view class="title">{{List[0]}}</view> 
+             <!-- <template is="wxParse" data="{{wxParseData:firstContent.nodes}}"/>  -->
+            <!-- <text>-----------------------------</text>> -->
+             <view class="context">
+              
+                 
+                 
+                 <template is="wxParse" data="{{wxParseData:firstContent.nodes}}"/> 
+              
+            </view>
+          </view>
+        </view> 
+         
+
+      </view>
+      
+       <view wx:else>
+        <view class="title" bindtap="tap_ch">
+          {{MagazineTitle}}
+        </view>
+        <view class="context">
+          <!-- <text class="detail">{{Content}}</text> -->
+           <template is="wxParse" data="{{wxParseData:magzineContent.nodes}}"/>  
+        </view>
+      </view> 
+      <!-- <template is="wxParse" data="{{wxParseData:content0.nodes}}"/> -->
+
+    </view>
+
+  </scroll-view>
+
+
+</view>
+
+<!-- <view wx:for="{{All}}" wx:key="item.articleid">
+  <view class="title">
+    {{Title}}
+  </view>
+  <view class="context">
+    {{content}}
+  </view>
+</view> -->
+
+ <template name="itmes">
+      <view class="title">{{title}}</view>
+      <view class="context">{{content}}</view>
+</template> 
+
+<!-- <view wx:for="{{AllList}}" wx:key="item.articleid">
+  <template is="itmes" data="{{...item}}" />
+</view>   
+
+<view bindtouchstart="handlerStart" catchtouchmove="handlerMove" bindtouchcancel="handlerCancel" bindtouchend="handlerEnd" class="user" style="width: {{ui.menuWidth}}px">
+  <view style="width: {{ui.menuWidth}}px;left:{{-ui.menuWidth/3 + ui.offsetLeft/3}}px" class="user-box {{!ui.tStart? 'withAnimate': ''}}">
+    <!-- <view id="{{item}}" wx:for="{{List}}" wx:key="item.id" class="one-menu" bindtap="GetFresh"> -->
+ <view id="{{item}}" wx:for="{{ListTitle}}" wx:key="item.id" class="one-menu" catchtap="handlerAvatarTap2">
+  <text>{{item}}</text>
+</view> 
+<!-- </view>
+</view> -->
