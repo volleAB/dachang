@@ -19,8 +19,9 @@
   justify-content: flex-start;  
 } 
  
-.pages-item { 
-  width: 31%;
+.pages-item {
+  box-sizing: border-box;
+  width: 92%;
   height: 250rpx;
   margin:10rpx;
   border: 0rpx;
@@ -130,4 +131,14 @@
   right: 0;
   z-index: -1;
   width: 100%;
+}
+
+.item {
+  display: inline-block;
+}
+
+.item h3 {
+  display: inline-block;
+  width: 56px;
+  height: 20px;
 }

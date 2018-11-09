@@ -29,29 +29,7 @@ App({
       })
     }
   },
-  showLoadToast: function (title, duration) {
-    wx.showToast({
-      title: title || '加载中',
-      icon: 'loading',
-      duration: duration || 10000
-    });
-  },
-  onShow(){
-    //当应用程序进入前台显示状态时触发
-    // console.log('App Show')
-  },
-  onHide(){
-    //当应用程序进入后台状态时触发
-    console.log('App Hide')
-  },
   globalData:{
     userInfo:null
-  },
-  showErrorModal: function (content, title) {
-    wx.showModal({
-      title: title || '加载失败',
-      content: content || '未知错误',
-      showCancel: false
-    });
-  },
+  }
 })

@@ -21,15 +21,14 @@ crawler = () => {
                 let $ = cheerio.load(html);
                 let i = 0;
                 
-
                 let pageListTitle = $(".columnStyle");
-                // let pageNum = $("#LIST_PAGINATION_COUNT");
 
                 pageListTitle.each(function (index, element) {
+                    if(index > 10) {
+                        return
+                    }
                     let title = $(this);
-                    // let titleText = title.find('font').text();
                     let titleHref = title.find('a').attr("href");
-                    // let titleTime = title.find('.postTime').text();
 
                     let reg = /^\//;
 
@@ -54,7 +53,11 @@ crawler = () => {
                             let $ = cheerio.load(html);
                             let title = $('.single-header').find('h2').text();
                             let obj = $('.article_author').text();
-                            let mes = $('.single-content').text();
+                            let mes = $('.single-content').html();
+                            mes = unescape(mes.replace(/&#x/g,'%u').replace(/;/g,''))
+                            mes = mes.replace(/\n/g,'')
+                            mes = mes.replace(/picture\/article/g,'https://www.scuec.edu.cn/picture/article')
+                            mes = mes.replace(/\/https/g,'https')
 
                             let date = new Date();
                             let reg = /(\d{4}-\d{2}-\d{2})/m;
@@ -67,15 +70,12 @@ crawler = () => {
                             if(author == "作者: ") {
                                 author = "作者: 未知";
                             }else {
-                                // author = obj.match(reg2)[0];
                                 author = obj.match(reg2);
                             }
 
                             let reg3 = /p\/(\d)/;
-                            // console.log(obj.match(reg2));
                             let classify = url.match(reg3)[0];
                             let tag = "";
-                            // console.log(classify, author);
                             if(classify == "p/2") {
                                 tag = "民大要闻";
                             }else if(classify == "p/7") {
@@ -100,7 +100,14 @@ crawler = () => {
                             pageList.details = mes;
                             pageList.author = author;
                             pageList.tag = tag;
-                            pageList.id = i++;
+                            if(pageList.tag == '校园新闻') {
+                                pageList.id = 'xy' + i++;
+                            }else if(pageList.tag == '民大要闻') {
+                                pageList.id = 'md' + i++;
+                            }else {
+                                pageList.id = 'else' + i++;
+                            }
+                            
 
                             pageListArr.push(pageList);
 

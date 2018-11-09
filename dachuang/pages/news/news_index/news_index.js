@@ -19,9 +19,7 @@ var GetList = function(that){
       var allPage = [];
       var page1 = [];
       var page2 = [];
-      // console.log(list);
-      // for(var i = 0; i < list.length; i++){
-      // }
+
       page1 = list[0]
       page2 = list[1]
       allPage = allPage.concat(page1,page2)
@@ -37,7 +35,7 @@ var GetList = function(that){
       that.setData({
         list: allPage
       });
-      // console.log(allPage);
+      console.log(allPage);
     }
   });
 }

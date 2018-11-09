@@ -1,36 +1,45 @@
 var PageItems = [
     {
-        text: '民大新闻',
-        icon:'/img/新闻.png',
-        route:'/pages/new_list/new_list',
+      text: '民大新闻',
+      icon:'../../../img/newspaper.png',
+      route:'/pages/new_list/new_list',
     },
     {
-        text: '官方微信',
-        icon:'/img/微信.png',
-        route:'/pages/mainpage/mainpage',
+      text: '官方微信',
+      icon:'../../../img/weixin.png',
+      route:'/pages/mainpage/mainpage',
     },
     {
-        text: '官方微博',
-        icon:'/img/微博.png',
-        route:'/pages/new_list/new_list',
+      text: '校外新闻',
+      icon:'../../../img/baidunews.png',
+      route:'/pages/new_list/new_list',
     },
     {
-        text: '民大广播',
-        icon:'/img/广播.png',
-        route:'/pages/new_list/new_list',
+      text: '民大广播',
+      icon:'../../../img/broadcast.png',
+      route:'/pages/new_list/new_list',
     },
     {
-        text: '民大电视',
-        icon:'/img/电视.png',
-        route:'/pages/new_list/new_list',
+      text: '民大电视',
+      icon:'../../../img/television.png',
+      route:'/pages/new_list/new_list',
     },
     {
-        text: '其他',
-        icon:'/img/其他.png',
-        route:'/pages/new_list/new_list',
+      text: '双塔直播',
+      icon: '../../../img/live.png',
+      route: '/pages/new_list/new_list'
+    },
+    {
+      text: '微众杂志',
+      icon: '../../../img/magazine.png',
+      route: '/pages/new_list/new_list'
+    },
+    {
+      text: '其他',
+      icon:'../../../img/other.png',
+      route:'/pages/new_list/new_list',
     },
 ];
-module.exports = {
-    PageItems: PageItems 
-}
 
+// module.exports.PageItems = PageItems
+export {PageItems}
