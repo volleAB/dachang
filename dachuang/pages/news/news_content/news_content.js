@@ -19,7 +19,7 @@ onLoad: function(options) {
    })
    console.log(that.data.id)
     wx.request({
-      url: "http://119.23.47.10/brief/",
+      url: "http://119.23.47.10/dachuang/brief/",
       success: function (res) {
         var list = res.data.mes;
         var preview = '';

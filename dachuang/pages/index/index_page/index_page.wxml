@@ -7,7 +7,7 @@
 </swiper>
  <view class="section">
   <view class="item" wx:for="{{PageItems}}" wx:key="index">
-    <navigator hover-class="none" url="/pages/news/news_index/news_index" class="pages-item">
+    <navigator hover-class="none" url="{{item.route}}" class="pages-item">
       <view>
         <image class="pages-icon" src="{{item.icon}}"></image> 
         <h3>{{item.text}}</h3>

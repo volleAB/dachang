@@ -1,7 +1,5 @@
 //new_list.js
 var app = getApp();
-var url_content ='/news/api/list/2';
-// var url = 'http://xxgk.scuec.edu.cn/crawler/';
 var page =0;
 var id = 0;
 var i = 0;
@@ -12,7 +10,7 @@ var GetList = function(that){
     hidden:false
   }); 
   wx.request({
-    url: "http://119.23.47.10/brief/",
+    url: "http://119.23.47.10/dachuang/brief/",
     success:function(res){
       var list = res.data.mes;
       var preview = '';

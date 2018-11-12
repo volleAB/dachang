@@ -14,7 +14,6 @@
     "pages/broadcast/broadcast_index/broadcast_index",
     "pages/weizong/weizong",
     "pages/developing/developing",
-    "pages/broadcast/broadcast_search/broadcast_search",
     "pages/service/service_index/service_baidu/service_baidu",
     "pages/service/service_index/service_music/service_music",
     "pages/service/service_index/service_weather/service_weather"

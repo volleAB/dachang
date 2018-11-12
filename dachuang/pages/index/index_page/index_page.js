@@ -8,14 +8,6 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     PageItems: lists.PageItems,
-    // newspaper: "../../../img/newspaper.png",
-    // weixin: "../../../img/weixin.png",
-    // baidunews: "../../../img/baidunews.png",
-    // broadcast: "../../../img/broadcast.png",
-    // television: "../../../img/television.png",
-    // live: "../../../img/live.png",
-    // magazine: "../../../img/magazine.png",
-    // other: "../../../img/other.png",
     movies: [
       { url: '/img/bg.png' },
       { url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1527410951112&di=2f8ef960e16275aac164aab1b669e2ce&imgtype=0&src=http%3A%2F%2Fa4.topitme.com%2Fo%2F201008%2F16%2F12819009659891.jpg'},
@@ -23,6 +15,5 @@ Page({
     ]
   },
   onLoad: function () {
-    console.log(this.data.PageItems)
   }
 })
