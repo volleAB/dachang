@@ -57,6 +57,7 @@ crawler = () => {
                             mes = unescape(mes.replace(/&#x/g,'%u').replace(/;/g,''))
                             mes = mes.replace(/\n/g,'')
                             mes = mes.replace(/picture\/article/g,'https://www.scuec.edu.cn/picture/article')
+                            mes = mes.replace(/%uA0/g, '')
                             mes = mes.replace(/\/https/g,'https')
 
                             let date = new Date();

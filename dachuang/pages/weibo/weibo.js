@@ -3,45 +3,12 @@
 var page=0;
 var app = getApp();
 var url_list = '/news/api/getWeiboContent';
-var urlList = app.BASE_URL.concat(url_list);
+
 var GetList = function (that) {
   that.setData({
     hidden: false
   });
   wx.request({
-    url: urlList,
-    data: {
-    },
-    header: {
-         'content-type':  "application/x-www-form-urlencoded"
-       },
-    method: 'POST',
-    success: function (res) {
-// console.loga(list[i])
- //     console.log(res.data.content);
-      var list = res.data.content;
-
-   //  console.log(list);
-      for (var i = 0, len = res.data.content.length; i < len; i +=1){
-        if (list[i].msg_from == "") {
-          list[i].msg_from = "中南民族大学";
-        }
-        else{
-          list[i].cite=list[i].msg_from+list[i].cite;
-       //   console.log(list[i].cite);
-       }
-       
-        
-      }
-
-      that.setData({
-        list: list,
-
-      });
-      that.setData({
-        hidden: true
-      });
-    }
   });
   
 }

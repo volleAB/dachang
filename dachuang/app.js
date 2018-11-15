@@ -1,10 +1,5 @@
 //app.js
 App({
-  BASE_URL: 'https://www.yanjinye.top',
-  // BASE_IMGURL:'http://119.29.3.135:8888',
-  BASEList:'',
-  BASEContent:'',
-  // handlerScroll:function(){},
   onLaunch: function () {
     //调用API从本地缓存中获取数据
     var logs = wx.getStorageSync('logs') || []

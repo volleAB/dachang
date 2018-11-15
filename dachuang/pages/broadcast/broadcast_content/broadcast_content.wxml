@@ -1,7 +1,3 @@
-<loading hidden="{{loadingHidden}}">
-        加载中...
-</loading>
-<!--title-->
 <view class="detail-top">
     <view class="top-image-left">
         <image src="{{broadcastContent.program_picture_url}}" style="height:300rpx; width:300rpx;"></image>

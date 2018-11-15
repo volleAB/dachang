@@ -1,7 +1,3 @@
-<loading hidden="{{hidden}}">
-        加载中...
-</loading>
-
 <swiper indicator-dots="true" autoplay="true" interval="5000" duration="1000" style="height:400rpx;">
     <block wx:for="{{focusImages}}" wx:key="{{item}}" >
         <swiper-item >
