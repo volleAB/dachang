@@ -1,0 +1,20 @@
+<!--lists.wxml-->
+<view class="con">
+  <view class="warp">
+    <view class="wz">
+      <view class="pages-row">
+        <image src="{{backgroundImg}}" class="weizong_img" mode="scaleToFill"></image>
+      </view>
+      <text>我们都是青年梦想家</text>
+    </view>
+    <view class="border" style="display:flex;flex-wrap:wrap">
+      <block wx:for="{{coverList}}" wx:key="item.id">
+        <view class="text">
+          <text class="title" style="display:block">{{item.title}}</text>
+          <image class="image" src="{{item.img}}"></image>
+        </view>
+      </block>
+    </view>
+    <text class="content-ending">已经到底啦(๑╹◡╹)ﾉ"""</text>
+  </view>
+</view>

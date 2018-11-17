@@ -35,7 +35,7 @@ crawler = () => {
                     if(i > 1) {
                         return
                     } else {
-                        // let http = require('http')
+
                         http.get(hotNewsList[i].href, (res) => {
                             let html = ''
                             res.on('data', (data) => {

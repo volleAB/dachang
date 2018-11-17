@@ -1,9 +1,10 @@
 const Koa = require('koa');
-const router = require('koa-router')();
+const Router = require('koa-router');
 const cors = require('koa2-cors');
-var crawler = require('./crawler');
+var newsCrawler = require('./crawler');
+var coverCrawler = require('./weijoin');
 var fs = require('fs');
-var file = './brief.json';
+var file = ['./brief.json', './cover.json'];
 const app = new Koa();
 
 app.use(cors({
@@ -19,12 +20,33 @@ app.use(cors({
     allowHeaders: ['Content-Type', 'Authorization', 'Accept'],
 }))
 
-setInterval(crawler, 3000000);
+setInterval(newsCrawler, 3000000);
+setInterval(coverCrawler, 3000000)
 // setInterval(crawler, 30000);
 
-router.get('/brief', async(ctx, next) => {
+const router = new Router;
+
+const briefRouter = new Router;
+
+briefRouter.get('/brief', async(ctx, next) => {
     return new Promise(function(resolve, reject) {
-        fs.readFile(file, 'utf8', function(err, data) {
+        fs.readFile(file[0], 'utf8', function(err, data) {
+            var page = JSON.parse(data.toString());
+            var i = 0;
+            i++;
+            ctx.body = { mes: page, cout: i };
+            resolve(next())
+        });
+    });
+}, function(ctx, next) {
+    ctx.body.message = ctx.body.message;
+});
+
+const coverRouter = new Router;
+
+coverRouter.get('/cover', async(ctx, next) => {
+    return new Promise(function(resolve, reject) {
+        fs.readFile(file[1], 'utf8', function(err, data) {
             var page = JSON.parse(data.toString());
             var i = 0;
             i++;
@@ -37,7 +59,11 @@ router.get('/brief', async(ctx, next) => {
 });
 
 
-app.use(router.routes());
-app.use(router.allowedMethods());
-app.listen(8060);
-console.log('app started at port http://localhost:8060/brief/');
+router.use(briefRouter.routes(), briefRouter.allowedMethods());
+router.use(coverRouter.routes(), coverRouter.allowedMethods());
+
+app.use(router.routes()).use(router.allowedMethods());
+
+app.listen(8060, () => {
+    console.log('app started at port http://localhost:8060/');
+})

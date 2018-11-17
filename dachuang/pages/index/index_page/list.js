@@ -12,7 +12,7 @@ var PageItems = [
     {
       text: '校外新闻',
       icon:'../../../img/baidunews.png',
-      route:'/pages/news/news_index/news_index',
+      route:'/pages/othernews/othernews',
     },
     {
       text: '民大广播',
@@ -32,7 +32,7 @@ var PageItems = [
     {
       text: '微众杂志',
       icon: '../../../img/magazine.png',
-      route: '/pages/weizong/weizong'
+      route: '/pages/weizhong/weizhong'
     },
     {
       text: '其他',
