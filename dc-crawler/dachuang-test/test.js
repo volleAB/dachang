@@ -15,4 +15,11 @@
 // console.log(url.split(reg));
 // console.log(url.match(reg2)[0])
 
+let str = '\n                      \n                      2018-2019学年度教学校历\n     '               
+let reg = / /g
+let reg2 = /\\n/g
 
+str = str.replace(reg, '')
+str = str.replace(reg2, '')
+
+console.log(str)

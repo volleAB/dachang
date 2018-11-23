@@ -1,0 +1,16 @@
+<!--pages/date/date.wxml-->
+<view class='content'>
+  <view class='bg'>
+    <image src='../../img/datebg.jpg'></image>
+  </view>
+  <view class='index'>
+    <h1>{{title}}</h1>
+    <view class='imgList'>
+      <block class="list" wx:for = "{{images}}" wx:key = "item.index">
+        <view class='imgList-li'>
+          <image src='{{item}}' bindtap='previewImg' data-index='{{index}}'></image>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

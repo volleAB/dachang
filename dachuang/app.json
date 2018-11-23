@@ -12,11 +12,11 @@
     "pages/TV/TV_index/TV_index",
     "pages/broadcast/broadcast_index/broadcast_index",
     "pages/weizhong/weizhong",
-    "pages/developing/developing",
     "pages/service/service_index/service_baidu/service_baidu",
     "pages/service/service_index/service_music/service_music",
     "pages/service/service_index/service_weather/service_weather",
-    "pages/othernews/othernews"
+    "pages/othernews/othernews",
+    "pages/date/date"
   ],
   "window": {
     "backgroundTextStyle": "dark",

@@ -10,11 +10,6 @@ var PageItems = [
       route:'/pages/weibo/weibo',
     },
     {
-      text: '校外新闻',
-      icon:'../../../img/baidunews.png',
-      route:'/pages/othernews/othernews',
-    },
-    {
       text: '民大广播',
       icon:'../../../img/broadcast.png',
       route:'/pages/broadcast/broadcast_index/broadcast_index',
@@ -35,9 +30,9 @@ var PageItems = [
       route: '/pages/weizhong/weizhong'
     },
     {
-      text: '其他',
-      icon:'../../../img/other.png',
-      route:'/pages/developing/developing',
+      text: '校历',
+      icon:'../../../img/date.png',
+      route:'/pages/date/date',
     },
 ];
 
