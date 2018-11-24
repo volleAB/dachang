@@ -37,6 +37,6 @@ getCover = () => {
     })
 }
 
-getCover()
+// getCover()
 
 module.exports = getCover

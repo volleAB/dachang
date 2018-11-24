@@ -11,7 +11,7 @@
       <block wx:for="{{coverList}}" wx:key="item.id">
         <view class="text">
           <text class="title" style="display:block">{{item.title}}</text>
-          <image class="image" src="{{item.img}}"></image>
+          <image class="image" src="{{item.img}}" bindtap='previewImg' data-index='{{index}}'></image>
         </view>
       </block>
     </view>
