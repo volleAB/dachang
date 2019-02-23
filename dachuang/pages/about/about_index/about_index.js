@@ -16,7 +16,13 @@ Page({
   bind: function (e) {
     var ds = e.currentTarget.dataset;
     wx.navigateTo({
-      url: '/pages/about/login/login'
+      url: '/pages/about/copyright/copyright'
+    })
+  },
+  bind2: function (e) {
+    var ds = e.currentTarget.dataset;
+    wx.navigateTo({
+      url: '/pages/about/feedback/feedback'
     })
   },
   onReady:function(){

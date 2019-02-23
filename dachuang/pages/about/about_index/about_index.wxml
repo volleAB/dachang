@@ -9,7 +9,7 @@
 </view>
 
 <view id="menus">
-  <view class="content" bindtap="viewFk">
+  <view class="content" bindtap="bind2">
     <view class="info">
       <view class="icon">
         <image src="{{feedback}}" class="icon"></image>
@@ -28,7 +28,7 @@
 </view>
 
 <view id="menus">
-  <view class="content" bindtap="viewGy">
+  <view class="content" bindtap="bind">
     <view class="info">
       <view class="icon">
       <image src="{{about}}" class="icon"></image>

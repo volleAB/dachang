@@ -11,7 +11,7 @@ var GetImage = function(that){
       for (var i = 0; i < coverQ.length; i++) {
         coverW.push(coverQ[i].img)
       }
-      // console.log(coverW)
+      console.log(res.data.mes)
       that.setData({
         coverList: coverQ,
         cover: coverW

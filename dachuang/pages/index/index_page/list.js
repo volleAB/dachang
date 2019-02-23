@@ -1,21 +1,21 @@
 var PageItems = [
     {
-      text: '民大新闻',
+      text: '新闻',
       icon:'../../../img/newspaper.png',
       route:'/pages/news/news_index/news_index',
     },
     {
-      text: '官方微信',
-      icon:'../../../img/weixin.png',
+      text: '官方微博',
+      icon:'../../../img/weibo.png',
       route:'/pages/weibo/weibo',
     },
     {
-      text: '民大广播',
+      text: '广播',
       icon:'../../../img/broadcast.png',
       route:'/pages/broadcast/broadcast_index/broadcast_index',
     },
     {
-      text: '民大电视',
+      text: '电视',
       icon:'../../../img/television.png',
       route:'/pages/TV/TV_index/TV_index',
     },

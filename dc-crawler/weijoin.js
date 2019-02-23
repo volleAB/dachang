@@ -3,9 +3,8 @@ const cheerio = require('cheerio')
 const fs = require('fs')
 const url = 'https://www.scuec.edu.cn/s/329/t/1619/p/9/list.htm'
 
-let coverListAll = []
-
 getCover = () => {
+    let coverListAll = []
     http.get(url, (res) => {
         let html = ''
 
